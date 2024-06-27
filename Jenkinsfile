@@ -17,7 +17,7 @@ pipeline{
         stage('test'){
             steps{
                 echo 'this is the test job'
-                sh 'npm tets'
+                sh 'npm test'
             }
         }
         stage('package'){
@@ -36,3 +36,4 @@ pipeline{
     }
     
 }
+
