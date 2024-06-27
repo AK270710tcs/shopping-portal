@@ -11,7 +11,7 @@ pipeline {
     stage('test') {
       steps {
         echo 'this is the test job'
-        sh 'npm tets'
+        sh 'npm test'
       }
     }
 
@@ -22,32 +22,10 @@ pipeline {
       }
     }
 
-<<<<<<< HEAD
-    stages{
-        stage('build'){
-            steps{
-                echo 'this is the build job'
-                sh 'npm install'
-            }
-        }
-        stage('test'){
-            steps{
-                echo 'this is the test job'
-                sh 'npm test'
-            }
-        }
-        stage('package'){
-            steps{
-                echo 'this is the package job'
-                sh 'npm run package'                
-            }
-        }
-=======
-    stage('Archive') {
+    stage('artifact') {
       steps {
         archiveArtifacts '**/distribution/*.zip'
       }
->>>>>>> 6bdb4d67272dbdc60540c0e595f3d6e0cf0997c3
     }
 
   }
@@ -58,12 +36,6 @@ pipeline {
     always {
       echo 'this pipeline has completed...'
     }
-<<<<<<< HEAD
-    
-}
-
-=======
 
   }
 }
->>>>>>> 6bdb4d67272dbdc60540c0e595f3d6e0cf0997c3
